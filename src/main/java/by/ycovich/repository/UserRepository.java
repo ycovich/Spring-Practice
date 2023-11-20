@@ -6,6 +6,8 @@ import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Map;
@@ -14,6 +16,9 @@ import java.util.Map;
 @AllArgsConstructor
 @NoArgsConstructor
 @Setter
+@Slf4j
+
+@Repository
 public class UserRepository {
     private String username;
     private int age;
@@ -22,12 +27,12 @@ public class UserRepository {
 
     @PostConstruct
     public void init(){
-        System.out.println("init userRepository");
+        log.info("init userRepository");
     }
 
     @PreDestroy
     public void destroy(){
-        System.out.println("destroy userRepository");
+        log.info("destroy userRepository");
     }
 
 }

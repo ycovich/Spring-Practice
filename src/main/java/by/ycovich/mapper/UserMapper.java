@@ -1,11 +1,14 @@
 package by.ycovich.mapper;
 
 import by.ycovich.dto.UserDTO;
-import lombok.RequiredArgsConstructor;
 import lombok.ToString;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
-@RequiredArgsConstructor
+
 @ToString
+@Component
 public class UserMapper {
-    private final UserDTO userDTO;
+    @Autowired
+    private UserDTO userDTO;
 }
